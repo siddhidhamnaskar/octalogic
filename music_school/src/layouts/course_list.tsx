@@ -1,3 +1,4 @@
+import { Input } from "@/components/ui/input"
 import {
     Table,
     TableBody,
@@ -54,9 +55,21 @@ import {
   ]
   
   export function TableDemo() {
-    return (
-      <Table>
-        <TableCaption>A list of your recent invoices.</TableCaption>
+    return <>
+    <div className=" flex-col space-y-[32px] w-[1280px] px-[24px] py-[36px] bg-[#F4F4F4]">
+      <div className="w-[1212px] m-auto">
+      <p className="w-[104px] h-[38px] family-Nunito Sans text-[28px] font-medium text-[#83858B]">Courses</p>
+    </div>
+   
+   <div className="flex-col space-y-[16px]">
+   <div className="w-[1212px] flex justify-between m-auto items-center">
+      <p className="text-[16px] text-[Nunito Sans] text-[#83858B] ">COURSE LIST</p>
+      <div>
+        <Input type="email" className="w-[223px] h-[32px] rounded-[4px] bg-[#FFFFFF] border-[#F4F4F4]]" placeholder="Search" />
+      </div>
+      </div>
+      <Table >
+        {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Invoice</TableHead>
@@ -67,7 +80,7 @@ import {
         </TableHeader>
         <TableBody>
           {invoices.map((invoice) => (
-            <TableRow key={invoice.invoice}>
+            <TableRow key={invoice.invoice} >
               <TableCell className="font-medium">{invoice.invoice}</TableCell>
               <TableCell>{invoice.paymentStatus}</TableCell>
               <TableCell>{invoice.paymentMethod}</TableCell>
@@ -76,6 +89,9 @@ import {
           ))}
         </TableBody>
       </Table>
-    )
+      </div>
+      </div>
+    
+    </>
   }
   
