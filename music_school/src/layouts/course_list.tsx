@@ -109,7 +109,7 @@ import {
 <Dialog >
   <DialogTrigger >
 
-            <button><img  className="mt-[350px]" src={FAB}/></button>
+            <button><img  className="mt-[350px] mr-[50px]" src={FAB}/></button>
      
 
   </DialogTrigger>
@@ -118,11 +118,11 @@ import {
          <p className="font-[400] text-[22px] font-[Nunito Sans] leading-[30.01px]">Add Course</p>
          <div className="w-[463px] flex-col space-y-[8px]">
           <Input className="border-[[#F4F4F4]] h-[32px] font-[Nunito Sans] font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
-          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
-          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
-          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
-          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
-          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Description"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Instructor"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Instrument"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Day of the week "></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Price"></Input>
 
          </div>
          <div className="w-[463px] flex justify-end space-x-[10px]">

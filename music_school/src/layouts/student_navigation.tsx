@@ -27,7 +27,7 @@ export default function Navbar(){
 
            <div className="w-[72px]  m-auto ">
             
-            <img className={`w-18  m-auto mt-[740px] cursor-pointer  flex flex-col items-end `} src={Frame3} />
+            <Link to={"/login"}><img className={`w-18  m-auto mt-[740px] cursor-pointer  flex flex-col items-end `} src={Frame3} /></Link>
            </div>
 
         </div>

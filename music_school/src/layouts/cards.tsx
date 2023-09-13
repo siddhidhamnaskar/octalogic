@@ -3,7 +3,7 @@
 
 export default function Cards(){
     return <>
-           <div className="w-[1212px] m-auto">
+           <div className="w-[1212px] m-auto font-[Nunito Sans]">
       <p className="w-[104px] h-[38px] family-Nunito Sans text-[28px] font-medium text-[#83858B]">Overview</p>
     </div>
      <div  className="w-[1212px] h-[98px] m-auto  flex justify-between">
@@ -19,7 +19,7 @@ export default function Cards(){
 </div>  
                 <div className="w-[134px] h-[46px]">
                     <p className="text-[22px] font-sans font-[400]">164</p>
-                    <p className="text-[12px] font-sans font-[400]">total number of students</p>
+                    <p className="text-[12px] font-[Nunito Sans] font-[400]">total number of students</p>
                 </div>
                 </div>
                 <div className="w-[200px] h-[12px] flex justify-end">
