@@ -7,6 +7,30 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+  import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+  } from "@/components/ui/alert-dialog"
+
+  import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogFooter,
+    DialogTitle,
+    DialogTrigger,
+  } from "@/components/ui/dialog"
+  
+  
+
   import {BsThreeDotsVertical} from "react-icons/bs"
   import FAB from "../assets/Extended FAB.png"
   const invoices = [
@@ -56,14 +80,14 @@ import {
   
   export function TableDemo() {
     return <>
-    <div className=" flex-col space-y-[32px] w-[1280px] px-[24px] py-[36px] bg-[#F4F4F4]">
+    <div className=" flex-col space-y-[32px] font-[Nunoto Sans] w-[1280px] px-[24px] py-[36px] bg-[#F4F4F4]">
       <div className="w-[1212px] m-auto">
       <p className="w-[104px] h-[38px] family-Nunito Sans text-[28px] font-medium text-[#83858B]">Courses</p>
     </div>
    
    <div className="flex-col space-y-[16px]">
    <div className="w-[1212px] flex justify-between m-auto items-center">
-      <p className="text-[16px] text-[Nunito Sans] text-[#83858B] ">COURSE LIST</p>
+      <p className="text-[16px] font-[500] text-[Nunito Sans] text-[#83858B] ">COURSE LIST</p>
       <div>
         <Input type="search" className="w-[223px] h-[32px] rounded-[4px] bg-[#FFFFFF] border-[#F4F4F4]]" placeholder="Search" />
       </div>
@@ -92,13 +116,51 @@ import {
         </TableBody>
       </Table>
       </div>
-      <div>
-        <div className=" flex justify-end" >
-          <button><img  className="mt-[350px]" src={FAB}/></button>
-        </div>
-      </div>
     
+  <div>
+           <div className="w-[1240px] flex justify-end" >
+<Dialog >
+  <DialogTrigger >
+
+            <button><img  className="mt-[350px]" src={FAB}/></button>
+     
+
+  </DialogTrigger>
+  <DialogContent className="w-[495px] flex-col aligh-center space-y-[16px] justify-center bg-[#FFFFFF] items-start">
+     <div className="w-[495px] h-[377px] flex-col space-y-[16px] bg-[#FFFFFF]  rounded-[8px] p-[16px]">
+         <p className="font-[400] text-[22px] font-[Nunito Sans] leading-[30.01px]">Add Course</p>
+         <div className="w-[463px] flex-col space-y-[8px]">
+          <Input className="border-[[#F4F4F4]] h-[32px] font-[Nunito Sans] font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
+          <Input className="border-[#F4F4F4]]  h-[32px]  font-[400] text-[#83858B]" type="text" placeholder="Course Name"></Input>
+
+         </div>
+         <div className="w-[463px] flex justify-end space-x-[10px]">
+          <div className="w-[75px] h-[35px] flex justify-center rounded-[4px] px-[8px]">
+           <p className="text-[14px] m-auto font-[400] leading-[19.1px] font-[Nunito Sans]">Cancel</p>
+           </div>
+        <div className="w-[106px] h-[35px] flex  rounded-[4px] px-[8px] bg-[#FEC0CA]">
+          <p className="text-[14px] m-auto font-[400] leading-[19.1px] font-[Nunito Sans]">Add Course</p>
+        </div>
+     </div>
+     </div>
+    
+   
+  </DialogContent>
+</Dialog>
+</div>
       </div>
+
+
+
+
+      </div>
+      
+ 
+
     
     </>
   }
