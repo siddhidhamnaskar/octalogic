@@ -3,10 +3,11 @@ import Frame1 from "../assets/Frame 4.png"
 import Frame2 from "../assets/Frame 5.png"
 import {useState} from "react"
 import Frame3 from "../assets/Frame 6.png"
+import { Link } from "react-router-dom"
 
 export default function Navbar(){
-     const [pointer1,setPointer1]=useState("pointer")
-     const [pointer2,setPointer2]=useState("arrow")
+     const [pointer1]=useState("pointer")
+     const [pointer2]=useState("pointer")
     return <>
         <div className="w-[96px] h-[1024px] w-fixed h-fixed py-5 bg-[white] border-r-[1px] flex-column space-y-10  ">
             <div className="w-12  m-auto">
@@ -15,11 +16,11 @@ export default function Navbar(){
             </div >
             < div className="w-18  m-auto  flex-column space-y-4 ">
             <div className="w-full m-auto">
-            <img className={`w-18  m-auto  cursor-${pointer1}`} src={Frame1} />
+            <Link to={"/"}><img className={`w-18  m-auto  cursor-${pointer1}`} src={Frame1} /></Link>
           
             </div>
             <div  className="w-full m-auto">
-            <img className={`w-18 m-auto  cursor-${pointer2}`} src={Frame2} />
+            <Link to={"/course"}> <img className={`w-18 m-auto  cursor-${pointer2}`} src={Frame2} /></Link>
          
             </div>
             </div>
