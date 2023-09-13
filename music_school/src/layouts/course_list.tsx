@@ -88,7 +88,7 @@ import { useEffect, useState } from "react"
           </TableRow>
         </TableHeader>
         <TableBody>
-          {data.map((elem,i=10) => (
+          {data.map((elem) => (
             <TableRow key={elem.id} className="text-left">
               <TableCell >{elem.instrument}</TableCell>
               <TableCell>{elem.description}</TableCell>

@@ -4,10 +4,16 @@ import Frame2 from "../assets/Frame 5.png"
 import {useState} from "react"
 import Frame3 from "../assets/Frame 6.png"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function Navbar(){
      const [pointer1]=useState("pointer")
      const [pointer2]=useState("pointer")
+      const navigate=useNavigate()
+     const Logout=()=>{
+        localStorage.setItem("email","")
+        navigate("/login")
+     }
     return <>
         <div className="w-[96px] h-[1024px] w-fixed h-fixed py-5 bg-[white] border-r-[1px] flex-column space-y-10 mb-[-200px] ">
             <div className="w-12  m-auto">
@@ -27,7 +33,7 @@ export default function Navbar(){
 
            <div className="w-[72px]  m-auto ">
             
-            <Link to={"/login"}><img className={`w-18  m-auto mt-[740px] cursor-pointer  flex flex-col items-end `} src={Frame3} /></Link>
+            <img onClick={Logout} className={`w-18  m-auto mt-[740px] cursor-pointer  flex flex-col items-end `} src={Frame3} />
            </div>
 
         </div>
