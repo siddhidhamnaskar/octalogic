@@ -1,5 +1,5 @@
 import {Route,Routes} from "react-router-dom";
-import OverView from "./pages/overview"
+import Home from "./pages/home"
 import Courses from "./pages/course";
 
 
@@ -13,7 +13,7 @@ function App() {
   
   
       <Routes>
-        <Route path="/" element={<OverView/>}></Route>
+        <Route path="/" element={<Home/>}></Route>
 
 
       </Routes>

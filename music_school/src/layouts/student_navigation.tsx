@@ -8,7 +8,7 @@ export default function Navbar(){
      const [pointer1,setPointer1]=useState("pointer")
      const [pointer2,setPointer2]=useState("arrow")
     return <>
-        <div className="w-[96px] h-[900px] py-5 bg-[white] border-[black] flex-column space-y-10  ">
+        <div className="w-[96px] h-[1024px] w-fixed h-fixed py-5 bg-[white] border-r-[1px] flex-column space-y-10  ">
             <div className="w-12  m-auto">
                 <img className="w-full" src={logo} />
                 
@@ -26,7 +26,7 @@ export default function Navbar(){
 
            <div className="w-[72px]  m-auto ">
             
-            <img className={`w-18  m-auto mt-[600px] cursor-pointer  flex flex-col items-end `} src={Frame3} />
+            <img className={`w-18  m-auto mt-[740px] cursor-pointer  flex flex-col items-end `} src={Frame3} />
            </div>
 
         </div>

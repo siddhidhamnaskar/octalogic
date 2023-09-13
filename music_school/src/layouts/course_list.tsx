@@ -8,7 +8,8 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
-  
+  import {BsThreeDotsVertical} from "react-icons/bs"
+  import FAB from "../assets/Extended FAB.png"
   const invoices = [
     {
       invoice: "INV001",
@@ -65,31 +66,39 @@ import {
    <div className="w-[1212px] flex justify-between m-auto items-center">
       <p className="text-[16px] text-[Nunito Sans] text-[#83858B] ">COURSE LIST</p>
       <div>
-        <Input type="email" className="w-[223px] h-[32px] rounded-[4px] bg-[#FFFFFF] border-[#F4F4F4]]" placeholder="Search" />
+        <Input type="search" className="w-[223px] h-[32px] rounded-[4px] bg-[#FFFFFF] border-[#F4F4F4]]" placeholder="Search" />
       </div>
       </div>
-      <Table >
+      <Table className="font-sans" >
         {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">Invoice</TableHead>
+          <TableRow className="text-left">
+            <TableHead className="">Invoice</TableHead>
             <TableHead>Status</TableHead>
             <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
+            <TableHead >Amount</TableHead>
+            <TableHead className="font-medium text-left">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {invoices.map((invoice) => (
-            <TableRow key={invoice.invoice} >
-              <TableCell className="font-medium">{invoice.invoice}</TableCell>
+            <TableRow key={invoice.invoice} className="text-left">
+              <TableCell >{invoice.invoice}</TableCell>
               <TableCell>{invoice.paymentStatus}</TableCell>
               <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+              <TableCell >{invoice.totalAmount}</TableCell>
+              <TableCell className=" justify-end items-center"><BsThreeDotsVertical/></TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
       </div>
+      <div>
+        <div className=" flex justify-end" >
+          <button><img  className="mt-[350px]" src={FAB}/></button>
+        </div>
+      </div>
+    
       </div>
     
     </>
