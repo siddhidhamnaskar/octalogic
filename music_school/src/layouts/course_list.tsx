@@ -7,25 +7,12 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
-  import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-  } from "@/components/ui/alert-dialog"
+
 
   import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogFooter,
-    DialogTitle,
+  
     DialogTrigger,
   } from "@/components/ui/dialog"
   
