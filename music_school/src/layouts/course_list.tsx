@@ -15,59 +15,52 @@ import {
   
     DialogTrigger,
   } from "@/components/ui/dialog"
+
+  import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+  } from "@/components/ui/popover"
   
+  import axios from "axios"
   
 
   import {BsThreeDotsVertical} from "react-icons/bs"
   import FAB from "../assets/Extended FAB.png"
-  const invoices = [
-    {
-      invoice: "INV001",
-      paymentStatus: "Paid",
-      totalAmount: "$250.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      invoice: "INV002",
-      paymentStatus: "Pending",
-      totalAmount: "$150.00",
-      paymentMethod: "PayPal",
-    },
-    {
-      invoice: "INV003",
-      paymentStatus: "Unpaid",
-      totalAmount: "$350.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      invoice: "INV004",
-      paymentStatus: "Paid",
-      totalAmount: "$450.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      invoice: "INV005",
-      paymentStatus: "Paid",
-      totalAmount: "$550.00",
-      paymentMethod: "PayPal",
-    },
-    {
-      invoice: "INV006",
-      paymentStatus: "Pending",
-      totalAmount: "$200.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      invoice: "INV007",
-      paymentStatus: "Unpaid",
-      totalAmount: "$300.00",
-      paymentMethod: "Credit Card",
-    },
-  ]
+import { useEffect, useState } from "react"
+ 
   
   export function TableDemo() {
+   const [data,setData]=useState([{id:1,name:"",description:"",instuctor:"",instrument:"",language:"",price:"",status:"",students:""}]);
+   const [value,setValue]=useState("")
+   useEffect(()=>{
+
+    axios.get(`https://octalogic-course-data.onrender.com/data/?_limit=10`)
+    .then(response => {
+        const posts = response;
+        console.log(posts);
+        setData(posts.data)
+    })
+   },[])
+  
+
+
+   const search=()=>{
+    axios.get(`https://octalogic-course-data.onrender.com/data?q=${value}&_limit=10`)
+    .then(response => {
+        const posts = response;
+        console.log(posts);
+        setData(posts.data)
+    })
+
+
+   }
+    
+   
+ 
+
     return <>
-    <div className=" flex-col space-y-[32px] font-[Nunoto Sans] w-[1280px] px-[24px] py-[36px] bg-[#F4F4F4]">
+    <div className="h-[1024px] flex-col space-y-[32px] font-[Nunoto Sans] w-[1280px] px-[24px] py-[36px] bg-[#F4F4F4]">
       <div className="w-[1212px] m-auto">
       <p className="w-[104px] h-[38px] family-Nunito Sans text-[28px] font-medium text-[#83858B]">Courses</p>
     </div>
@@ -76,28 +69,40 @@ import {
    <div className="w-[1212px] flex justify-between m-auto items-center">
       <p className="text-[16px] font-[500] text-[Nunito Sans] text-[#83858B] ">COURSE LIST</p>
       <div>
-        <Input type="search" className="w-[223px] h-[32px] rounded-[4px] bg-[#FFFFFF] border-[#F4F4F4]]" placeholder="Search" />
+        <Input type="search" onChange={(e)=>{setValue(e.target.value); search()}} className="w-[223px] h-[32px] rounded-[4px] bg-[#FFFFFF] border-[#F4F4F4]]" placeholder="Search" />
       </div>
       </div>
       <Table className="font-sans" >
         {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>
           <TableRow className="text-left">
-            <TableHead className="">Invoice</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Method</TableHead>
-            <TableHead >Amount</TableHead>
+            <TableHead className="">Name</TableHead>
+            <TableHead>Description</TableHead>
+            <TableHead>Instructor</TableHead>
+            <TableHead >Instrument</TableHead>
+            <TableHead >Language</TableHead>
+            <TableHead >Studens</TableHead>
+            <TableHead >Price</TableHead>
+            <TableHead >Status</TableHead>
             <TableHead className="font-medium text-left">Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {invoices.map((invoice) => (
-            <TableRow key={invoice.invoice} className="text-left">
-              <TableCell >{invoice.invoice}</TableCell>
-              <TableCell>{invoice.paymentStatus}</TableCell>
-              <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell >{invoice.totalAmount}</TableCell>
-              <TableCell className=" justify-end items-center"><BsThreeDotsVertical/></TableCell>
+          {data.map((elem,i=10) => (
+            <TableRow key={elem.id} className="text-left">
+              <TableCell >{elem.instrument}</TableCell>
+              <TableCell>{elem.description}</TableCell>
+              <TableCell>{elem.instuctor}</TableCell>
+              <TableCell >{elem.instrument}</TableCell>
+              <TableCell >{elem.language}</TableCell>
+              <TableCell >{elem.students}</TableCell>
+              <TableCell >{elem.price}</TableCell>
+              <TableCell >{elem.status}</TableCell>
+              <TableCell className=" justify-end items-center">
+              <Popover>
+  <PopoverTrigger><BsThreeDotsVertical/></PopoverTrigger>
+  <PopoverContent>Place content for the popover here.</PopoverContent>
+</Popover></TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -109,7 +114,7 @@ import {
 <Dialog >
   <DialogTrigger >
 
-            <button><img  className="mt-[350px] mr-[50px]" src={FAB}/></button>
+            <button><img  className="mt-[230px] mr-[50px]" src={FAB}/></button>
      
 
   </DialogTrigger>
@@ -138,6 +143,8 @@ import {
    
   </DialogContent>
 </Dialog>
+
+
 </div>
       </div>
 

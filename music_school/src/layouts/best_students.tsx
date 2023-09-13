@@ -7,45 +7,24 @@ import {
     TableRow,
   } from "@/components/ui/table"
 
-  const invoices = [
-    {
-      invoice: "INV001",
-      paymentStatus: "Paid",
-      totalAmount: "$250.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      invoice: "INV002",
-      paymentStatus: "Pending",
-      totalAmount: "$150.00",
-      paymentMethod: "PayPal",
-    },
-    {
-      invoice: "INV003",
-      paymentStatus: "Unpaid",
-      totalAmount: "$350.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      invoice: "INV004",
-      paymentStatus: "Paid",
-      totalAmount: "$450.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      invoice: "INV005",
-      paymentStatus: "Paid",
-      totalAmount: "$550.00",
-      paymentMethod: "PayPal",
-    },
-   
-  ]
-  
+  import {useState ,useEffect} from "react"
+  import axios from "axios"
 
 
 
 
 export default function Students(){
+  const [data,setData]=useState([{en_number:"",id:"",s_name:"",c_name:"",fees:"",date:"",course:""}])
+  useEffect(()=>{
+
+    axios.get(`https://octalogic-course-data.onrender.com/students`)
+    .then(response => {
+        const posts = response;
+        console.log(posts);
+        setData(posts.data)
+    })
+   },[])
+
     return <>
     <div className="w-[1212px] m-auto flex-col space-y-[16px]">
         <div className="flex justify-between w-[1212px] m-auto">
@@ -61,20 +40,24 @@ export default function Students(){
         {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
         <TableHeader>
           <TableRow className="text-left font-medium">
-            <TableHead className="font-medium">Invoice</TableHead>
-            <TableHead className="font-medium">Status</TableHead>
-            <TableHead className="font-medium">Method</TableHead>
-            <TableHead className="font-medium">Amount</TableHead>
+            <TableHead className="font-medium">Reg.No</TableHead>
+            <TableHead className="font-medium">F.Name</TableHead>
+            <TableHead className="font-medium">L.Name</TableHead>
+            <TableHead className="font-medium">Course #</TableHead>
+            <TableHead className="font-medium">Total Fees</TableHead>
+            <TableHead className="font-medium">Reg.Date</TableHead>
           
           </TableRow>
         </TableHeader>
         <TableBody>
-          {invoices.map((invoice) => (
-            <TableRow key={invoice.invoice} className="text-left">
-              <TableCell >{invoice.invoice}</TableCell>
-              <TableCell>{invoice.paymentStatus}</TableCell>
-              <TableCell>{invoice.paymentMethod}</TableCell>
-              <TableCell >{invoice.totalAmount}</TableCell>
+          {data.map((elem) => (
+            <TableRow key={elem.id} className="text-left">
+              <TableCell >{elem.en_number}</TableCell>
+              <TableCell>{elem.s_name}</TableCell>
+              <TableCell>{elem.c_name}</TableCell>
+              <TableCell >{elem.course}</TableCell>
+              <TableCell >{elem.fees}</TableCell>
+              <TableCell >{elem.date}</TableCell>
              
             </TableRow>
           ))}

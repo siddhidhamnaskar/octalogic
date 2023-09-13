@@ -9,7 +9,7 @@ export default function Navbar(){
      const [pointer1]=useState("pointer")
      const [pointer2]=useState("pointer")
     return <>
-        <div className="w-[96px] h-[1024px] w-fixed h-fixed py-5 bg-[white] border-r-[1px] flex-column space-y-10  ">
+        <div className="w-[96px] h-[1024px] w-fixed h-fixed py-5 bg-[white] border-r-[1px] flex-column space-y-10 mb-[-200px] ">
             <div className="w-12  m-auto">
                 <img className="w-full" src={logo} />
                 

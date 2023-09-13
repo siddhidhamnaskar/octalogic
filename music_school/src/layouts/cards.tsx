@@ -19,7 +19,7 @@ export default function Cards(){
 </div>  
                 <div className="w-[134px] h-[46px]">
                     <p className="text-[22px] font-sans font-[400]">164</p>
-                    <p className="text-[12px] font-[Nunito Sans] font-[400]">total number of students</p>
+                    <p className="text-[12px] font-[Nunito Sans] font-[400] text-[#83858B]">total number of students</p>
                 </div>
                 </div>
                 <div className="w-[200px] h-[12px] flex justify-end">
@@ -41,7 +41,7 @@ export default function Cards(){
 </div>  
                 <div className="w-[134px] h-[46px]">
                     <p className="text-[22px] font-sans font-[400]">12</p>
-                    <p className="text-[12px] font-sans font-[400]">total number of courses</p>
+                    <p className="text-[12px] font-sans font-[400] text-[#83858B]">total number of courses</p>
                 </div>
                 </div>
                 <div className="w-[200px] h-[12px] flex justify-end">
@@ -64,7 +64,7 @@ export default function Cards(){
 </div>  
                 <div className="w-[134px] h-[46px]">
                     <p className="text-[22px] font-sans font-[400]">$2000</p>
-                    <p className="text-[12px] font-sans font-[400]">total amount earned</p>
+                    <p className="text-[12px] font-sans font-[400] text-[#83858B]">total amount earned</p>
                 </div>
                 </div>
                 <div className="w-[200px] h-[12px] flex justify-end">
@@ -86,7 +86,7 @@ export default function Cards(){
 </div>  
                 <div className="w-[134px] h-[46px]">
                     <p className="text-[22px] font-sans font-[400]">Guitar</p>
-                    <p className="text-[12px] font-sans font-[400]">best performing course</p>
+                    <p className="text-[12px] font-sans font-[400] text-[#83858B]">best performing course</p>
                 </div>
                 </div>
                 <div className="w-[200px] h-[12px] flex justify-end">
@@ -109,7 +109,7 @@ export default function Cards(){
 </div>  
                 <div className="w-[134px] h-[46px]">
                     <p className="text-[22px] font-sans font-[400]">Flute</p>
-                    <p className="text-[12px] font-sans font-[400]">worst performing course</p>
+                    <p className="text-[12px] font-sans font-[400] text-[#83858B]">worst performing course</p>
                 </div>
                 </div>
                 <div className="w-[200px] h-[12px] flex justify-end">
