@@ -46,7 +46,7 @@ import { useEffect, useState } from "react"
 
 
    const search=()=>{
-    axios.get(`https://octalogic-course-data.onrender.com/data?q=${value}&_limit=10`)
+    axios.get(`https://rich-jumpsuit-hen.cyclic.app/data?q=${value}&_limit=10`)
     .then(response => {
         const posts = response;
         console.log(posts);
