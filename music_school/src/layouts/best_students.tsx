@@ -17,7 +17,7 @@ export default function Students(){
   const [data,setData]=useState([{en_number:"",id:"",s_name:"",c_name:"",fees:"",date:"",course:""}])
   useEffect(()=>{
 
-    axios.get(`https://octalogic-course-data.onrender.com/students`)
+    axios.get(`https://rich-jumpsuit-hen.cyclic.app/students`)
     .then(response => {
         const posts = response;
         console.log(posts);

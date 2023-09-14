@@ -19,7 +19,7 @@ export default function Enrolments(){
    const [data,setData]=useState([{en_number:"",id:"",s_name:"",c_name:"",fees:"",date:""}])
   useEffect(()=>{
 
-    axios.get(`https://octalogic-course-data.onrender.com/enrolments`)
+    axios.get(`https://rich-jumpsuit-hen.cyclic.app/enrolments`)
     .then(response => {
         const posts = response;
         console.log(posts);
